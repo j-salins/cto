@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-@theme {  
-	--font-roboto: "Roboto", sans-serif; 
+@theme {  --font-roboto: "Roboto", sans-serif; }
+
+li {
+	@apply text-sm md:text-base;
 }
+
 html {
 	scroll-behavior: smooth;
 }
+
 body {
 	width: 100%;
 	height: 100%;
@@ -15,6 +19,8 @@ body {
 	background-color: #ccc;
 	font-family: 'Roboto';
 }
+
+
 
 
 
