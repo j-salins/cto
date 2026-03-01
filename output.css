@@ -34,6 +34,7 @@
     --color-gray-700: oklch(0.373 0.034 259.733);
     --color-gray-800: oklch(0.278 0.033 256.848);
     --color-neutral-100: oklch(0.97 0 0);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-7xl: 80rem;
@@ -209,6 +210,17 @@
   .visible {
     visibility: visible;
   }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -262,6 +274,9 @@
   }
   .hidden {
     display: none;
+  }
+  .inline-block {
+    display: inline-block;
   }
   .w-1\/5 {
     width: calc(1/5 * 100%);
@@ -355,6 +370,9 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -410,6 +428,9 @@
   .text-nowrap {
     text-wrap: nowrap;
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-gray-50 {
     color: var(--color-gray-50);
   }
@@ -457,6 +478,38 @@
       @media (hover: hover) {
         color: var(--color-white);
       }
+    }
+  }
+  .focus\:not-sr-only {
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+  }
+  .focus\:absolute {
+    &:focus {
+      position: absolute;
+    }
+  }
+  .focus\:top-2 {
+    &:focus {
+      top: calc(var(--spacing) * 2);
+    }
+  }
+  .focus\:left-2 {
+    &:focus {
+      left: calc(var(--spacing) * 2);
+    }
+  }
+  .focus\:z-\[10000\] {
+    &:focus {
+      z-index: 10000;
     }
   }
   .sm\:visible {
